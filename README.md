@@ -47,16 +47,8 @@
 
   ## Questions
 
-<<<<<<< HEAD
-  feel free to email the developers :
-  lott.john99@gmail.com
-  marinajalonzo1@gmail.com
-  brandonlrodriguez25@gmail.com
-  brongoartdecor@gmail.com
-=======
   feel free to email the developers : <br>
  <span style="margin-right: 210px;"></span> lott.john99@gmail.com <br>
  <span style="margin-right: 210px;"></span> marinajalonzo1@gmail.com <br>
  <span style="margin-right: 210px;"></span> brandonlrodriguez25@gmail.com <br>
  <span style="margin-right: 210px;"></span> brongoartdecor@gmail.com
->>>>>>> 77515cff8fe53c16b0f122783af7abd0aad737e0
