@@ -7,7 +7,6 @@
   * [Description](#description)
   * [Usage](#usage)
   * [Live URL](#live-url)
-  * [Video Demonstration](#video-demonstration)
   * [Project Motivation](#project-motivation)
   * [What Was Learned](#what-was-learned)
   * [Acknowledgments](#acknowledgments)
@@ -28,21 +27,19 @@
 
   ## Live URL 
 
-  ## Video Demonstration
-
   ## Project Motivation
 
   ･ to stay organized & boost productivity with a custom-built to-do app ! <br>
   ･ serves as a valuable addition to our portfolios <br>
-    showcasing our ability to create functional & visually appealing applications <br>
-    that can make a real impact on web developers daily lives
+  &nbsp;&nbsp;&nbsp;showcasing our ability to create functional & visually appealing applications <br>
+  &nbsp;&nbsp;&nbsp;that can make a real impact on web developers daily lives
     
   ## What Was Learned
 
   ･ applied skills in both front-end & back-end development <br>
-    to create a practical & user-friendly application <br>
+ &nbsp;&nbsp;&nbsp;to create a practical & user-friendly application <br>
   ･ enhanced coding abilities by gaining hands-on experience <br>
-    in building an end-to-end web application
+ &nbsp;&nbsp;&nbsp;in building an end-to-end web application
 
   ## Acknowledgments
 
@@ -51,7 +48,7 @@
   ## Questions
 
   feel free to email the developers : <br>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lott.john99@gmail.com <br>
-                                      marinajalonzo1@gmail.com <br>
-                                      brandonlrodriguez25@gmail.com <br>
-                                      brongoartdecor@gmail.com
+ <span style="margin-right: 210px;"></span> lott.john99@gmail.com <br>
+ <span style="margin-right: 210px;"></span> marinajalonzo1@gmail.com <br>
+ <span style="margin-right: 210px;"></span> brandonlrodriguez25@gmail.com <br>
+ <span style="margin-right: 210px;"></span> brongoartdecor@gmail.com
