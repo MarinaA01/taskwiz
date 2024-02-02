@@ -50,8 +50,8 @@
 
   ## Questions
 
-  feel free to email the developers : <br>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lott.john99@gmail.com <br>
-                                      marinajalonzo1@gmail.com <br>
-                                      brandonlrodriguez25@gmail.com <br>
-                                      brongoartdecor@gmail.com
+  feel free to email the developers :
+  lott.john99@gmail.com
+  marinajalonzo1@gmail.com
+  brandonlrodriguez25@gmail.com
+  brongoartdecor@gmail.com
