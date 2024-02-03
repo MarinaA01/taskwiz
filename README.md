@@ -43,7 +43,8 @@
 
   ## Acknowledgments
 
-  thank you to ...
+  thank you to UCF Coding Boot Camp Instructor : Steve Mustanski <br>
+  & Teacher Assistants : Mateo Wallace & Gerard Mennella
 
   ## Questions
 
