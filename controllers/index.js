@@ -1,9 +1,10 @@
-const router = require('express').Router();
+// routes/index.js
+const express = require('express');
+const router = express.Router();
+const taskController = require('../controllers/taskController');
 
-const apiRoutes = require('./api');
-const homeRoutes = require('./homeRoutes');
-
-router.use('/', homeRoutes);
-router.use('/api', apiRoutes);
+// Home Page
+router.get('/', taskController.getAllTasks);
+router.post('/add', taskController.addTask);
 
 module.exports = router;
