@@ -1,55 +1,23 @@
 {
-<<<<<<< HEAD
-  "dependencies": {
-    "handlebars": "^4.7.8"
-  },
-  "name": "taskwiz",
-  "description": "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)",
-  "version": "1.0.0",
-  "main": "index.js",
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
-=======
-  "name": "taskwiz",
-  "version": "1.0.0",
-  "description": " to-do app",
-  "main": "server.js",
-  "scripts": {
-    "test": "jest",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MarinaA01/taskwiz.git"
-  },
-<<<<<<< HEAD
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
->>>>>>> 77515cff8fe53c16b0f122783af7abd0aad737e0
-=======
-  "keywords": [
-    "TaskWiz"
-  ],
-  "author": "Group 2",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/MarinaA01/taskwiz/issues"
-  },
-  "homepage": "https://github.com/MarinaA01/taskwiz#readme"
->>>>>>> b0cd81f370de402537ddc5769a5a6dce70d21d8b
+"name": "taskwiz",
+"version": "1.0.0",
+"description": " to-do app",
+"main": "server.js",
+"scripts": {
+  "test": "jest",
+  "start": "node server.js"
+},
+"repository": {
+  "type": "git",
+  "url": "git+https://github.com/MarinaA01/taskwiz.git"
+},
+"keywords": [
+  "TaskWiz"
+],
+"author": "Group 2",
+"license": "ISC",
+"bugs": {
+  "url": "https://github.com/MarinaA01/taskwiz/issues"
+},
+"homepage": "https://github.com/MarinaA01/taskwiz#readme"
 }
