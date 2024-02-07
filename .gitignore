@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+node_modules
+=======
 # Custom
 
 Main/
@@ -77,3 +80,32 @@ yarn.lock
 
 # React practice app
 00-practice-app
+<<<<<<< HEAD
+
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+>>>>>>> 77515cff8fe53c16b0f122783af7abd0aad737e0
+=======
+>>>>>>> 6b06737a6ca04d121ce4c63b10991f8f3b7ce229

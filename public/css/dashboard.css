@@ -1,0 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(../images/TaskWiz-Background.jpg);
+    background-size: cover;
+    color: #FFD700;
+}
