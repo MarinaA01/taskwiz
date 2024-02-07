@@ -1,0 +1,22 @@
+ <div class="container">
+  <div class="row">
+    <div class="col-lg-6 col-lg-offset-3">
+      <h1 class="page-header text-center">Edit Task</h1>
+      <form>
+        <div class="form-group">
+          <label for="editTask">Edit Task:</label>
+          <div class="input-group">
+            <input type="text" class="form-control" value="{{task}}" id="editTask" data-id="{{_id}}" autofocus>
+            <span class="input-group-btn">
+              <button data-id="{{_id}}" id="edit" class="btn btn-warning" type="button" name="submit">Edit</button>
+            </span>
+          </div>
+        </div>
+      </form>
+      <hr>
+      <a href="/">
+        <button class="btn btn-primary">Back</button>
+      </a>
+    </div>
+  </div>
+</div>
