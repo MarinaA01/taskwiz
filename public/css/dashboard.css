@@ -15,3 +15,24 @@ h1 {
     text-align: center;
     margin-top: 20px;
 }
+
+form {
+    margin: auto 0;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+#task {
+    font-size: 1.75em;
+}
+
+#submit {
+    margin: 10px;
+    padding: 10px;
+    font-size: 1.25em;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFD700;
+}
