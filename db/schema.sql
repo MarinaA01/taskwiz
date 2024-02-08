@@ -1,24 +1,27 @@
- const mysql = require('mysql');
+-- create database if not exists
+CREATE DATABASE IF NOT EXISTS my_database;
 
-// Create a connection to the MySQL server
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'your_username',
-  password: 'your_password',
-  database: 'taskwiz', // Update the database name to 'taskwiz'
-});
+-- use the database
+USE my_database;
 
-// Drop the database if it exists
-connection.query('DROP DATABASE IF EXISTS `taskwiz`;', (error) => {
-  if (error) throw error;
-  console.log('Database dropped successfully');
-});
+-- create table for users
+CREATE TABLE IF NOT EXISTS users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(50) NOT NULL,
+  email VARCHAR(100) NOT NULL UNIQUE,
+  password VARCHAR(100) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
-// Create the database
-connection.query('CREATE DATABASE `taskwiz`;', (error) => {
-  if (error) throw error;
-  console.log('Database created successfully');
-});
+-- create table for tasks
+CREATE TABLE IF NOT EXISTS tasks (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  content TEXT,
+  user_id INT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (user_id) REFERENCES users(id)
+);
 
-// Close the connection
-connection.end();
+-- create index on username column for faster lookups
+CREATE INDEX idx_username ON users (username);
