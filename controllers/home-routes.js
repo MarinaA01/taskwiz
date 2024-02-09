@@ -1,21 +1,21 @@
 const router = require('express').Router();
 const { Project, User } = require('../models');
-const withAuth = require('../utils/auth');
+const withAuth = require('../utils/userAuth');
 
 router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
-    const projectData = await Project.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
+    // const projectData = await Project.findAll({
+    //   include: [
+    //     {
+    //       model: User,
+    //       attributes: ['name'],
+    //     },
+    //   ],
+    // });
 
     // Serialize data so the template can read it
-    const projects = projectData.map((project) => project.get({ plain: true }));
+    // const projects = projectData.map((project) => project.get({ plain: true }));
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
@@ -23,6 +23,7 @@ router.get('/', async (req, res) => {
     //   logged_in: req.session.logged_in 
     });
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json(err, "error");
   }
 });
+module.exports = router;
