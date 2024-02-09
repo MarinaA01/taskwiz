@@ -9,7 +9,7 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 h1 {
-    color: #FFD700;
+    color: #f6fafb;
     font-size: 5em;
     font-weight: bolder;
     text-align: center;
@@ -34,5 +34,5 @@ form {
     font-size: 1.25em;
     border: none;
     border-radius: 5px;
-    background-color: #FFD700;
+    background-color: #f6fafb;
 }
