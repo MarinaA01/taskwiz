@@ -1,54 +1,46 @@
-// dependencies
-const express = require('express');
-const app = express();
-const bodyParser = require('body-parser');
 const path = require('path');
-const logger = require('morgan');
+const express = require('express');
+const session = require('express-session');
 const exphbs = require('express-handlebars');
+const routes = require('./controllers');
+// const helpers = require('./utils/helpers');
 
-// setting up Sequelize and MySQL database
-const { Sequelize } = require('sequelize');
-const sequelize = new Sequelize('database', 'username', 'password', {
-  host: 'localhost',
-  dialect: 'mysql',
-});
+const sequelize = require('./config/connection');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-// testing the database connection
-sequelize
-  .authenticate()
-  .then(() => {
-    console.log('database connection has been established successfully.');
+const app = express();
+const PORT = process.env.PORT || 3001;
+
+// set up Handlebars.js engine with custom helpers
+const hbs = exphbs.create({ });
+
+const sess = {
+  secret: 'Super secret secret',
+  cookie: {
+    maxAge: 300000,
+    httpOnly: true,
+    secure: false,
+    sameSite: 'strict',
+  },
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
   })
-  .catch((error) => {
-    console.error('unable to connect to the database:', error);
-  });
+};
 
-// Setting up morgan middleware
-app.use(logger('dev'));
+app.use(session(sess));
 
-// Setting up body parser middleware
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-
-// Setting up handlebars middleware
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+// inform Express.js on which template engine to use
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-// Serving blank favicon to keep from throwing 404 errors
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Setting up static path for serving static files
-app.use(express.static(path.join(__dirname, 'public'))); 
+app.use(routes);
 
-// Bringing in the routes
-const index = require('./routes/index');
-const api = require('./routes/api');
-
-app.use('/', index);
-app.use('/api', api);
-
-// Server starts listening
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, function() {
-  console.log('server listening on port', PORT);
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log('Now listening at http://localhost:3001'));
 });

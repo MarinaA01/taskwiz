@@ -1,4 +1,4 @@
- // import the task model
+// import the task model
 const Task = require('../models/task');
 
 // function to sort tasks based on task name

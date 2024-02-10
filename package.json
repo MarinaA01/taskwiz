@@ -1,1 +1,33 @@
-{"name":"taskwiz","version":"1.0.0","description":" to-do app","main":"server.js","scripts":{"test":"jest","start":"node server.js"},"repository":{"type":"git","url":"git+https://github.com/MarinaA01/taskwiz.git"},"keywords":["TaskWiz"],"author":"Group 2","license":"ISC","bugs":{"url":"https://github.com/MarinaA01/taskwiz/issues"},"homepage":"https://github.com/MarinaA01/taskwiz#readme","dependencies":{"bcrypt":"^5.1.1","connect-session-sequelize":"^7.1.7","dotenv":"^16.4.1","express":"^4.18.2","express-handlebars":"^7.1.2","express-session":"^1.18.0","morgan":"^1.10.0","mysql2":"^3.9.1","sequelize":"^6.36.0"}}
+{
+    "name": "taskwiz",
+    "version": "1.0.0",
+    "description": " to-do app",
+    "main": "server.js",
+    "scripts": {
+        "test": "jest",
+        "start": "node server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/MarinaA01/taskwiz.git"
+    },
+    "keywords": [
+        "TaskWiz"
+    ],
+    "author": "Group 2",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/MarinaA01/taskwiz/issues"
+    },
+    "homepage": "https://github.com/MarinaA01/taskwiz#readme",
+    "dependencies": {
+        "bcrypt": "^5.1.1",
+        "connect-session-sequelize": "^7.1.7",
+        "dotenv": "^16.4.1",
+        "express": "^4.18.2",
+        "express-handlebars": "^7.1.2",
+        "express-session": "^1.18.0",
+        "mysql2": "^3.9.1",
+        "sequelize": "^6.36.0"
+    }
+}

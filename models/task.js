@@ -1,4 +1,47 @@
-let tasks = []; 
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
+
+class Task extends Model {}
+
+// define Task model
+Task.init(
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    description: {
+      type: DataTypes.STRING,
+    },
+    date_created: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    },
+  },
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'task',
+  }
+);
+
+let tasks = [];
 
 // get all tasks
 function getAllTasks() {
@@ -43,11 +86,12 @@ function generateId() {
   return Math.random().toString(36).substr(2, 9);
 }
 
-// export the functions
+// export the functions & task model
 module.exports = {
-  getAllTasks,   // export the function to get all tasks
-  getTaskById,   // export the function to get a task by ID
-  createTask,    // export the function to create a new task
-  updateTask,    // export the function to update a task
-  deleteTask     // export the function to delete a task
+  Task,
+  getAllTasks, // export the function to get all tasks
+  getTaskById, // export the function to get a task by ID
+  createTask, // export the function to create a new task
+  updateTask, // export the function to update a task
+  deleteTask // export the function to delete a task
 };
