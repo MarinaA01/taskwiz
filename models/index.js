@@ -1,4 +1,4 @@
-const User = require('./User');
+const User = require('./user');
 const Task = require('./Task');
 
 // user has many Tasks
