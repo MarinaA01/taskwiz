@@ -1,0 +1,14 @@
+[
+    {
+      "name": "Seed the DB",
+      "description": "This is a seed data for the database"
+    },
+    {
+        "name": "Start the express server",
+        "description": "Express server is started using npm run start"
+    },
+    {
+        "name": "Add routes",
+        "description": "Add routes and see the output in browser"
+    }
+  ]

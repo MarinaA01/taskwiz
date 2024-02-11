@@ -2,7 +2,7 @@
 module.exports = (sequelize, DataTypes) => {
   // importing the user & task models, passing sequelize & DataTypes as arguments
   const User = require('./user')(sequelize, DataTypes);
-  const Task = require('./task')(sequelize, DataTypes);
+  const {Task} = require('./task');
 
   // defining the association: user has many tasks
   User.hasMany(Task, {

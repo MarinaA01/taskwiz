@@ -9,7 +9,7 @@ const apiRoutes = require('../routes/apiRoutes'); // Updated line
 // import the homeRoutes module from a different file or directory
 const homeRoutes = require('./routes.js');
 
-// define routes & use the imported modules as middleware
+// define routes and use the imported modules as middleware
 router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
 

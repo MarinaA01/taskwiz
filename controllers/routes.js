@@ -1,5 +1,8 @@
 const router = require('express').Router();
-const { Task, User } = require('../models');
+const sequelize = require('../config/connection');
+
+const Sequelize = require('sequelize');
+const { User, Task } = require('../models')(sequelize, Sequelize.DataTypes);
 const withAuth = require('../utils/userAuth.js');
 
 // route to get all tasks & render the homepage view
@@ -23,8 +26,9 @@ router.get('/', async (req, res) => {
       tasks,
       logged_in: req.session.logged_in,
     });
-  } catch (err) {
-    res.status(500).json(err);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({error});
   }
 });
 
