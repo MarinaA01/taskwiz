@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Task, User } = require('../models');
-const withAuth = require('../utils/auth');
+const withAuth = require('../utils/userAuth.js');
 
 // route to get all tasks & render the homepage view
 router.get('/', async (req, res) => {
