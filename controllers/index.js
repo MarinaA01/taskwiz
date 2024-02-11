@@ -2,10 +2,10 @@
 const router = require('express').Router();
 
 // import the apiRoutes module from a different file or directory
-const apiRoutes = require('./path/to/apiRoutes');
+const apiRoutes = require('./api');
 
 // import the homeRoutes module from a different file or directory
-const homeRoutes = require('./path/to/homeRoutes');
+const homeRoutes = require('./routes.js');
 
 // define routes and use the imported modules as middleware
 router.use('/', homeRoutes);
