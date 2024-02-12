@@ -1,0 +1,15 @@
+ <form action="/tasks/{{ task.id }}?_method=DELETE" method="POST" style="display: inline;">
+    <!-- edit task form group -->
+    <div class="input-group editGroup">
+        <!-- checkbox for task completion status -->
+        <div class="input-group-prepend ">
+            <div class="input-group-text">
+                <input type="checkbox" name="isDone" {{#if task.isDone }} checked {{/if}} disabled>
+            </div>
+        </div>
+        <!-- input field for task name -->
+        <input class="form-control" type="text" placeholder="name" name="name" value="{{ task.name }}" disabled><br><br>&nbsp; &nbsp;
+        <!-- input field for task description -->
+        <input class="form-control" type="text" placeholder="name" name="description" value="{{ task.description }}" disabled>
+    </div>
+</form>
