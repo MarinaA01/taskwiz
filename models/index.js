@@ -1,20 +1,47 @@
-// exporting a function that takes in the sequelize & DataTypes parameters
-module.exports = (sequelize, DataTypes) => {
-  // importing the user & task models, passing sequelize & DataTypes as arguments
-  const User = require('./user')(sequelize, DataTypes);
-  const {Task} = require('./task');
+const fs = require("fs");
+const path = require("path");
+const Sequelize = require("sequelize");
+const basename = path.basename(__filename);
+const env = process.env.NODE_ENV || "development";
+const config = require(__dirname + "/../config/config.json")[env];
+const db = {};
 
-  // defining the association: user has many tasks
-  User.hasMany(Task, {
-    foreignKey: 'user_id', // foreign key to associate user with the task
-    onDelete: 'CASCADE', // if User is deleted, also delete associated tasks
+// initialize sequelize
+let sequelize;
+if (config.use_env_variable) {
+  sequelize = new Sequelize(process.env[config.use_env_variable], config);
+} else {
+  sequelize = new Sequelize(
+    config.database,
+    config.username,
+    config.password,
+    config
+  );
+}
+
+// read models directory & load each model
+fs.readdirSync(__dirname)
+  .filter((file) => {
+    return (
+      file.indexOf(".") !== 0 && file !== basename && file.slice(-3) === ".js"
+    );
+  })
+  .forEach((file) => {
+    const model = require(path.join(__dirname, file))(
+      sequelize,
+      Sequelize.DataTypes
+    );
+    db[model.name] = model;
   });
 
-  // defining the association: task belongs to user
-  Task.belongsTo(User, {
-    foreignKey: 'user_id', // foreign key to associate the task with user
-  });
+// associate models if needed
+Object.keys(db).forEach((modelName) => {
+  if (db[modelName].associate) {
+    db[modelName].associate(db);
+  }
+});
 
-  // returning an object that contains the user & task models
-  return { User, Task };
-};
+// export the database object
+db.sequelize = sequelize;
+db.Sequelize = Sequelize;
+module.exports = db;
