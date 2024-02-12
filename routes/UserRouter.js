@@ -5,12 +5,12 @@ const User = db.User;
 const bcrypt = require("bcryptjs");
 const passport = require("passport");
 
-// route to render the login form
+// route for rendering the login page
 router.get("/login", (req, res) => {
   res.render("login");
 });
 
-// route to handle user login
+// route for handling user login
 router.post(
   "/login",
   passport.authenticate("local", {
@@ -19,16 +19,16 @@ router.post(
   })
 );
 
-// route to render the registration form
+// route for rendering the registration page
 router.get("/register", (req, res) => {
   res.render("register");
 });
 
-// route to handle user registration
+// route for handling user registration
 router.post("/register", (req, res) => {
   const { name, email, password } = req.body;
-  
-  // validate user input
+
+  // check if all fields are provided
   if (!name || !email || !password) {
     req.flash("error_msg", "All fields are required.");
   }
@@ -72,7 +72,7 @@ router.post("/register", (req, res) => {
   });
 });
 
-// route to handle user logout
+// route for user logout
 router.get("/logout", (req, res) => {
   req.logout();
   req.flash("success_msg", "Logout Successfully");
