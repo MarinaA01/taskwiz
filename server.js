@@ -1,46 +1,67 @@
-const path = require('path');
-const express = require('express');
-const session = require('express-session');
-const exphbs = require('express-handlebars');
-const routes = require('./route/index');
-// const helpers = require('./utils/helpers');
+const express = require("express");
 
-const sequelize = require('./config/connection');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
+// load environment variables in development mode
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
 
+const usePassport = require("./config/passport");
+const session = require("express-session");
+const exphbs = require("express-handlebars");
+const bodyParser = require("body-parser");
+const methodOverride = require("method-override");
 const app = express();
+const routes = require("./routes");
 const PORT = process.env.PORT || 3001;
+const flash = require("connect-flash");
+const path = require("path");
 
-// set up Handlebars.js engine with custom helpers
-const hbs = exphbs.create({ });
+// set up Handlebars as the template engine
+app.engine(
+  "handlebars",
+  exphbs({ defaultLayout: "main", extname: ".handlebars" })
+);
+app.set("view engine", "handlebars");
 
-const sess = {
-  secret: 'Super secret secret',
-  cookie: {
-    maxAge: 300000,
-    httpOnly: true,
-    secure: false,
-    sameSite: 'strict',
-  },
-  resave: false,
-  saveUninitialized: true,
-  store: new SequelizeStore({
-    db: sequelize
+// configure session middleware
+app.use(
+  session({
+    secret: process.env.SECRET_KEY,
+    resave: false,
+    saveUninitialized: true,
   })
-};
+);
 
-app.use(session(sess));
-
-// inform Express.js on which template engine to use
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
-
+// parse incoming request data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/api', routes);
+// serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, "public")));
 
-sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening at http://localhost:3001'));
+// enable method override for PUT & DELETE requests
+app.use(methodOverride("_method"));
+
+// initialize Passport for authentication
+usePassport(app);
+
+// flash messages middleware
+app.use(flash());
+
+// set local variables for views
+app.use((req, res, next) => {
+  res.locals.isAuthenticated = req.isAuthenticated();
+  res.locals.user = req.user;
+  res.locals.success_msg = req.flash("success_msg");
+  res.locals.warning_msg = req.flash("warning_msg");
+  res.locals.error_msg = req.flash("error_msg");
+  next();
+});
+
+// include routes
+app.use(routes);
+
+// start the server
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
