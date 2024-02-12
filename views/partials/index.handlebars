@@ -1,0 +1,28 @@
+ <a href="/tasks/new" class="btn btn-primary mb-3 create">Create New Task</a>
+
+<ul class="list-group">
+  <!-- iterate over each task -->
+  {{#each tasks}}
+  <li class="list-group-item">
+    <div class="row container">
+      <div class="col-auto mr-auto col-md-4">
+        <!-- checkbox for task completion status -->
+        <input style="vertical-align: middle;" type="checkbox" name="isDone" {{#if this.isDone }} checked {{/if}} disabled>
+        <!-- task name -->
+        <h4 style="display: inline; vertical-align: middle;">
+          {{ this.name }}
+        </h4>
+      </div>
+      <div class="ml-2">
+        <!-- buttons for task actions -->
+        <a class="btn btn-success" href="./tasks/{{ this.id }}">detail</a>
+        <a class="btn btn-success" href="./tasks/{{ this.id }}/edit">edit</a>
+        <!-- form for deleting a task -->
+        <form action="./tasks/{{ this.id }}?_method=DELETE" method="POST" style="display: inline;">
+          <button class="btn btn-danger" type="submit">delete</button>
+        </form>
+      </div>
+    </div>
+  </li><br><br>
+  {{/each}}
+</ul>
