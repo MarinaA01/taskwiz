@@ -1,16 +1,55 @@
 .task {
-    border: 1px solid black;
-    margin: 10px 0;
-    padding: 0 10px;
-    position: relative;
-    background: #ddd;
-    border-radius: 4px;
-  }
-  
-  .task span {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-weight: bold;
-    text-transform: capitalize;
-  }
+  border: 1px solid black;
+  margin: 10px 0;
+  padding: 0 10px;
+  position: relative;
+  background: #ddd;
+  border-radius: 4px;
+}
+
+.task span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: bold;
+  text-transform: capitalize;
+}
+a {
+  color: white !important;
+}
+.login {
+  margin-top: 10px !important;
+}
+.register {
+  margin-top: 10px !important;
+  margin-right: 20px;
+}
+#flex-disp {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 15%;
+}
+#username {
+  margin-top: 15px;
+}
+#logout {
+  margin-top: 10px;
+}
+#task {
+  margin-bottom: 15px;
+}
+.create {
+  margin: 50px 50%;
+}
+.submitForm {
+  margin-top: 20px;
+}
+.editGroup {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+}
+.submitReg{
+  color: white !important
+}
