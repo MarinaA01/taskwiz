@@ -1,0 +1,17 @@
+<form action="/tasks/{{task.id}}?_method=PUT" method='POST' style="display: inline;">
+   <!-- edit task form group -->
+   <div class='input-group editGroup' >
+     <!-- checkbox for task completion status -->
+     <div class="input-group-prepend">
+       <div class="input-group-text">
+         <input type="checkbox" name='isDone' {{#if task.isDone}} checked {{/if}}>
+       </div>
+     </div>
+     <!-- input field for task name -->
+     <input type="text" class='form-control' placeholder="name" name="name" value="{{task.name}}">
+     <!-- button to save the edited task -->
+     <div class="input-group-append">
+       <button class='btn btn-primary' type="submit">save</button>
+     </div>
+   </div>
+</form>
