@@ -50,6 +50,21 @@ a {
   margin: 0 auto;
   display: flex;
 }
-.submitReg{
-  color: white !important
+.box {
+  display: flex !important;
+}
+
+.title,
+.desc {
+  font-size: 20px;
+  color: white;
+  margin-left: 10px;
+}
+.isDone {
+  height: 30px;
+  width: 40px;
+  color: green;
+}
+.form {
+  display: block !important;
 }

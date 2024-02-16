@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 // import route handlers for different routes
-const home = require("./home");
+const home = require("./homeRouter");
 const users = require("./UserRouter");
 const tasks = require("./taskRouter");
 const auth = require("./authRouter");
