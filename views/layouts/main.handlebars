@@ -39,11 +39,11 @@
       {{#if isAuthenticated}}
       <div id="flex-disp">
         <p id="username">Hello {{ user.name}}</p>
-        <a href="/logout" id="logout" class="btn btn-secondary">Logout</a>
+        <a href="/users/logout" id="logout" class="btn btn-secondary">Logout</a>
       </div>
       {{else}}
-      {{!-- <a href="/register" class="btn btn-secondary register">Register</a> --}}
-      <a href="/login" class="btn btn-secondary login">Login</a>
+      <a href="/users/register" class="btn btn-secondary register">Register</a>
+      <a href="/users/login" class="btn btn-secondary login">Login</a>
       {{/if}}
     </nav>
   </header>

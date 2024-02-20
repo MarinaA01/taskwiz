@@ -3,40 +3,20 @@ const router = express.Router();
 const db = require("../models");
 const Task = db.Task;
 
-// create
+// Create
 router.get("/new", (req, res) => {
   res.render("create");
-});
-router.get("/", (req, res) => {
-  const UserId = req.user.id;
-  console.log(UserId);
-  return Task.findAll({
-    raw: true,
-    nest: true,
-    where: { user_id: UserId },
-  })
-    .then((tasks) => {
-      console.log(tasks);
-      return res.render("index", { tasks: tasks });
-    })
-    .catch((error) => {
-      return res.status(422).json(error);
-    });
 });
 
 router.post("/", (req, res) => {
   const { name, description } = req.body;
-  const user_id = req.user.id;
-
-  console.log("name:", name);
-  console.log("description:", description);
-  console.log("user_id:", user_id);
-
+  const userId = req.user.id;
+  console.log("userId", userId);
   return Task.create({
     name,
     description,
-    user_id,
-    date_created: new Date(),
+    user_id: userId,
+    date_created: new Date(), // Make sure 'date_created' is correctly defined in your model
   })
     .then(() => res.redirect("/"))
     .catch((error) => {
@@ -45,7 +25,7 @@ router.post("/", (req, res) => {
     });
 });
 
-// read
+// Read
 router.get("/:id", (req, res) => {
   const user_id = req.user.id;
   const id = req.params.id;
@@ -54,7 +34,7 @@ router.get("/:id", (req, res) => {
     .catch((error) => console.log(error));
 });
 
-// update
+// Update
 router.get("/:id/edit", (req, res) => {
   const UserId = req.user.id;
   const id = req.params.id;
@@ -79,11 +59,11 @@ router.put("/:id", (req, res) => {
       },
     }
   )
-    .then(() => res.redirect(`/tasks/${id}`))
+    .then(() => res.redirect(`/`))
     .catch((error) => console.log(error));
 });
 
-// delete
+// Delete
 router.delete("/:id", (req, res) => {
   const user_id = req.user.id;
   const id = req.params.id;
