@@ -25,5 +25,3 @@ module.exports = {
   sequelize,
   ...models,
 };
-
-app.listen(process.env.PORT);
