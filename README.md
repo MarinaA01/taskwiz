@@ -27,7 +27,7 @@
   ･ use the filter options to view all tasks, completed tasks, or active tasks <br>
   ･ stay organized & track your progress with this intuitive to-do app !
 
-  ## Live URL 
+  ## Live URL
 
   https://projecttaskwiz-67d5f58acaf6.herokuapp.com/users/login
 

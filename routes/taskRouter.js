@@ -46,11 +46,11 @@ router.get("/:id/edit", (req, res) => {
 router.put("/:id", (req, res) => {
   const user_id = req.user.id;
   const id = req.params.id;
-  const { name, isDone } = req.body;
+  const { name, is_done } = req.body;
   return Task.update(
     {
       name,
-      isDone: isDone === "on",
+      is_done: is_done === "on",
     },
     {
       where: {
