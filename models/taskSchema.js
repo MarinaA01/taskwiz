@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      isDone: { 
+      is_done: { 
         type: DataTypes.BOOLEAN, 
         defaultValue: false 
       },
@@ -59,3 +59,15 @@ module.exports = (sequelize, DataTypes) => {
 
   return Task;
 };
+
+
+// CREATE TABLE Task (
+//   id INT NOT NULL AUTO_INCREMENT,
+//   name VARCHAR(255) NOT NULL,
+//   is_done BOOLEAN DEFAULT FALSE,
+//   description VARCHAR(255),
+//   date_created DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+//   user_id INT,
+//   PRIMARY KEY (id),
+//   FOREIGN KEY (user_id) REFERENCES Users(id) ON DELETE CASCADE
+// );
