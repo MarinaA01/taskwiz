@@ -2,7 +2,7 @@
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-  ![TaskWiz](https://github.com/MarinaA01/taskwiz/assets/143395934/27e0e337-d32a-4566-a01b-1316b7b15617)
+  ![TaskWiz 5](https://github.com/MarinaA01/taskwiz/assets/143395934/3509172e-10c8-482b-a5b3-270d4c3bc63c)
 
   # Table of Contents
 
