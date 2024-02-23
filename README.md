@@ -49,7 +49,7 @@
 
   thank you to UCF Coding Boot Camp Instructor : Steve Mustanski <br>
   & Teacher Assistants : Mateo Wallace & Gerard Mennella <br>
-  special thanks to the coding mentor Funbi Yusuf
+  special thanks to the coding mentor Funbi Yusuf : https://github.com/missphumby 
 
   ## Questions
 
